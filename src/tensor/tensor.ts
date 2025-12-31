@@ -16,6 +16,22 @@ export class Tensor {
   }
 
   add(b: Tensor) {
+    return this._binaryOp(b, (a, b) => a + b);
+  }
+
+  sub(b: Tensor) {
+    return this._binaryOp(b, (a, b) => a - b);
+  }
+
+  mul(b: Tensor) {
+    return this._binaryOp(b, (a, b) => a * b);
+  }
+
+  div(b: Tensor) {
+    return this._binaryOp(b, (a, b) => a / b);
+  }
+
+  _binaryOp(b: Tensor, op: (a: number, b: number) => number): Tensor {
     const resultShape = getBroadcastShape(this.shape, b.shape);
     const resultStrides = getStrides(resultShape);
     const resultNumElements = resultShape.reduce(
@@ -33,7 +49,7 @@ export class Tensor {
       const flatA = multiToFlatIndex(coordsdA, this.strides);
       const flatB = multiToFlatIndex(coordsB, b.strides);
 
-      resultFlatData[i] = this.flatData[flatA] + b.flatData[flatB];
+      resultFlatData[i] = op(this.flatData[flatA], b.flatData[flatB]);
     }
 
     return new Tensor(unflatten(resultFlatData, resultShape));
