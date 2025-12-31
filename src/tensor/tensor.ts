@@ -55,6 +55,27 @@ export class Tensor {
     return new Tensor(unflatten(resultFlatData, resultShape));
   }
 
+  neg() {
+    return this._unaryOp((x) => -x);
+  }
+
+  exp() {
+    return this._unaryOp((x) => Math.exp(x));
+  }
+
+  log() {
+    return this._unaryOp((x) => Math.log(x));
+  }
+
+  sqrt() {
+    return this._unaryOp((x) => Math.sqrt(x));
+  }
+
+  _unaryOp(op: (x: number) => number): Tensor {
+    const resultFlatData = this.flatData.map(op);
+    return new Tensor(unflatten(resultFlatData, this.shape));
+  }
+
   _getShape(): number[] {
     const ranks: number[] = [];
 
