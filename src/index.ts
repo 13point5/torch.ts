@@ -1,4 +1,4 @@
-import { Tensor } from "./tensor/tensor";
+import { Tensor } from "./tensor";
 
 const scalar = new Tensor(13.5);
 console.log("scalar", scalar);

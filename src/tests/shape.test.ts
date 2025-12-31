@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { Tensor } from "./tensor";
+import { Tensor } from "../tensor";
 
 describe("Tensor.shape", () => {
   it("returns empty array for scalar", () => {
@@ -93,4 +93,3 @@ describe("Tensor.shape", () => {
     expect(t.shape).toEqual([2, 3, 4, 5]);
   });
 });
-

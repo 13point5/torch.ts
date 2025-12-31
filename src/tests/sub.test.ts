@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { Tensor } from "./tensor";
+import { Tensor } from "../tensor";
 
 describe("Tensor.sub", () => {
   it("subtracts two scalars", () => {
@@ -101,4 +101,3 @@ describe("Tensor.sub", () => {
     expect(result.data[2]).toBeNaN();
   });
 });
-
