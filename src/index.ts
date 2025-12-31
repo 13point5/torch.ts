@@ -1,27 +1,32 @@
 import { Tensor } from "./tensor";
 
-const scalar = new Tensor(13.5);
-console.log("scalar", scalar);
-console.log(scalar.flatData);
-console.log(scalar.strides);
-
-const a = new Tensor([1, 2]);
-console.log("a", a);
-console.log(a.flatData);
-console.log(a.strides);
-
-const b = new Tensor([
+// Demo: matmul (matrix multiplication)
+console.log("=== Matrix Multiplication ===");
+const A = new Tensor([
   [1, 2],
   [3, 4],
 ]);
-// console.log(b);
+const B = new Tensor([
+  [5, 6],
+  [7, 8],
+]);
+console.log("A:", A.toString());
+console.log("B:", B.toString());
+console.log("A @ B:", A.matmul(B).toString());
 
-const c = new Tensor([
+// Demo: add (with broadcasting)
+console.log("\n=== Addition ===");
+const x = new Tensor([
   [1, 2, 3],
   [4, 5, 6],
 ]);
-// console.log("c", c);
-// console.log(c.flatData);
-// console.log(c.strides);
+const y = new Tensor([10, 20, 30]);
+console.log("x:", x.toString());
+console.log("y:", y.toString());
+console.log("x + y:", x.add(y).toString());
 
-console.log(a.add(b));
+// Demo: exp (element-wise exponential)
+console.log("\n=== Exponential ===");
+const z = new Tensor([0, 1, 2]);
+console.log("z:", z.toString());
+console.log("exp(z):", z.exp().toString());

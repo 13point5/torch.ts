@@ -1,6 +1,6 @@
 # torch.ts
 
-A simple TypeScript project for running local scripts.
+A simple version of pytorch in TypeScript from scratch as a learning project.
 
 ## Setup
 
@@ -11,13 +11,7 @@ npm install
 ## Running Scripts
 
 Run the main entry point:
+
 ```bash
 npm start
 ```
-
-Run any TypeScript file directly:
-```bash
-npx tsx src/index.ts
-npx tsx src/utils/math.ts
-```
-
