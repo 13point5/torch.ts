@@ -16,40 +16,30 @@ Run the main entry point:
 npm start
 ```
 
+## Running Tests
+
+```bash
+npm test
+```
+
 ## Example
 
 ```typescript
 import { Tensor } from "./tensor";
 
-// Matrix multiplication
-const A = new Tensor([
-  [1, 2],
-  [3, 4],
-]);
-const B = new Tensor([
-  [5, 6],
-  [7, 8],
-]);
-const C = A.matmul(B);
-
-// Addition with broadcasting
-const x = new Tensor([
+// Create tensors
+const t = new Tensor([
   [1, 2, 3],
   [4, 5, 6],
 ]);
-const y = new Tensor([10, 20, 30]);
-const sum = x.add(y);
 
-// Element-wise operations
-const z = new Tensor([0, 1, 2]);
-z.exp(); // e^x
-z.log(); // ln(x)
-z.sqrt(); // √x
-z.neg(); // -x
+// Access tensor properties
+console.log(t.shape); // [2, 3]
+console.log(t.strides); // [3, 1]
+console.log(t.flatData); // [1, 2, 3, 4, 5, 6]
 
-// Arithmetic operations
-x.add(y); // x + y
-x.sub(y); // x - y
-x.mul(y); // x * y
-x.div(y); // x / y
+// Access elements by multi-dimensional index
+console.log(t.pos([0, 0])); // 1
+console.log(t.pos([0, 2])); // 3
+console.log(t.pos([1, 1])); // 5
 ```

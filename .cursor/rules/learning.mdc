@@ -1,0 +1,19 @@
+---
+alwaysApply: true
+---
+
+I'm learning how to build a simple version of pytorch in TypeScript from scratch.
+
+I don't want a perfect learning journey, I want it to be messy, fun, and challenging.
+
+My end goal is to be able to train a small gpt-2 model.
+
+My first goal is to be able to train a simple neural network on MNIST.
+
+I'm starting by understanding the basics of tensors and how to perform operations on them.
+
+I kinda understand broadcasting and strides. I want to be able to do a forward pass with random weights and biases. Then I want to think about autograd.
+
+I want to understand the data structures and algorithms before coding them so I prefer pseudocodes and visualizations of the algorithms so that I can do them on paper before coding them.
+
+Only give me code if I ask for it. I like a socratic learning journey but with real examples not abstract ideas.
